@@ -1,3 +1,102 @@
+@use 'variables';
+
+html {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    font-family: "Inter", sans-serif;
+    background: url("./images/pattern-curve.svg") no-repeat;
+    background-position-y: 110%;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+.content {
+    display: grid;
+    place-items: center;
+    margin: 0 2rem;
+}
+
+.person {
+    padding: 2rem;
+    padding-bottom: 5rem;
+    background: url(./images/pattern-bg.svg) no-repeat;
+    background-size: contain;
+    &__image {
+        max-width: 100%;
+        border-radius: 5px;
+    }
+}
+
+.review {
+    max-width: 375px;
+    position: relative;
+    @include variables.flexColumnCenter;
+    &__quote {
+        margin: 0;
+        padding: 0;
+        font-weight: 300;
+        font-size: 1.1rem;
+        color: var(--dark-blue);
+        text-align: center;
+        position: relative;
+    }
+    &__content {
+        @include variables.flexColumnCenter;
+    }
+    &__name {
+        margin-top: 1rem;
+        font-weight: 700;
+        color: var(--dark-blue);
+    }
+    &__title {
+        color: var(--grayish-blue);
+    }
+}
+.icon {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -80%);
+    width: 60px;
+    height: 50px;
+}
+
+.nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    border-radius: 20px;
+}
+
+.btn {
+    border: none;
+    background: transparent;
+    line-height: 0;
+    cursor: pointer;
+    padding: 0.6rem 0.8rem;
+}
+
 .attribution {
     font-size: 11px;
     text-align: center;
@@ -5,4 +104,8 @@
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+.hidden {
+    display: none;
 }
