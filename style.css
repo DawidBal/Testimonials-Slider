@@ -51,6 +51,7 @@ p {
 .person__image {
   max-width: 100%;
   border-radius: 5px;
+  box-shadow: 40px 70px -60px #000;
 }
 
 .review {
