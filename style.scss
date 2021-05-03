@@ -28,12 +28,14 @@ p {
     padding: 0;
 }
 .content {
+    position: relative;
     display: grid;
     place-items: center;
     margin: 0 2rem;
 }
 
 .person {
+    position: relative;
     padding: 2rem;
     padding-bottom: 5rem;
     background: url(./images/pattern-bg.svg) no-repeat;
@@ -45,8 +47,7 @@ p {
 }
 
 .review {
-    max-width: 375px;
-    position: relative;
+    width: clamp(330px, 90%, 1395px);
     @include variables.flexColumnCenter;
     &__quote {
         margin: 0;
@@ -81,7 +82,6 @@ p {
 .nav {
     position: absolute;
     left: 50%;
-    top: 50%;
     transform: translate(-50%, -50%);
     display: flex;
     align-items: center;
@@ -108,4 +108,38 @@ p {
 
 .hidden {
     display: none;
+}
+
+@media only screen and (min-width: 700px) {
+    .review {
+        flex-direction: row-reverse;
+        &__quote {
+            font-size: clamp(1rem, 0.7rem + 1vw, 1.6rem);
+            width: 33ch;
+            text-align: unset;
+        }
+        &__content {
+            display: block;
+            position: relative;
+            left: 10%;
+        }
+        &__name {
+            display: inline-block;
+        }
+    }
+    .person {
+        flex-basis: 100%;
+        padding: 3.5rem;
+        padding-right: 5rem;
+    }
+    .icon {
+        width: 100px;
+        height: 80px;
+        left: 24%;
+        bottom: 42%;
+    }
+
+    .nav {
+        left: 25%;
+    }
 }
