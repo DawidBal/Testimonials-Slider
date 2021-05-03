@@ -115,7 +115,8 @@ p {
     .review {
         flex-direction: row-reverse;
         &__quote {
-            font-size: clamp(1rem, 0.7rem + 1vw, 1.6rem);
+            font-size: clamp(1rem, 0.7rem + 1vw, 2rem);
+            line-height: 1.3;
             width: 33ch;
             text-align: unset;
         }
@@ -136,10 +137,13 @@ p {
     .icon {
         width: 100px;
         height: 80px;
-        left: 24%;
-        bottom: 42%;
+        left: 25%;
+        bottom: 55%;
     }
 
+    .btn {
+        padding: 0.8rem 1rem;
+    }
     .nav {
         left: 25%;
     }
